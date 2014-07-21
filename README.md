@@ -27,8 +27,27 @@ docker run -p 8000:8000 -d 0bin
 
 To make data persistent accross container restart :
 ```
-# Create 
+# Create a folder for datas on the host
 mkdir /some/location
+# laucn the container with the host folder mounted as a data volume
 docker run -p 8000:8000 -v /some/location/:/var/zerobin/content -d 0bin
 ```
 
+Build your own
+==============
+You will need a custom Dockerfile and a custom settings.py file in the same folder.
+
+Look at [the default config file](https://github.com/sametmax/0bin/blob/master/zerobin/default_settings.py) for availables settings.
+
+
+Create a Dockerfile containing :
+
+```
+FROM jcsaaddupuy/0bin
+
+# Adds custom config in the right place
+ADD settings.py /etc/zerobin/settings.py
+
+EXPOSE 8000
+CMD ["zerobin", "--settings-file", "/etc/zerobin/settings.py"]
+```
