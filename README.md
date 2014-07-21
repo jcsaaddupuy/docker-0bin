@@ -14,8 +14,7 @@ PORT = "8000"
 PASTE_FILES_ROOT = "/var/zerobin/content"
 ```
 
-In the case you would want to access to the content folder from another container, 
-the folder /var/zerobin/content is exported as a volume.
+In the case you would want to access to the content folder from another container.
 
 How to use it
 =============
