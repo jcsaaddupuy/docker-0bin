@@ -20,6 +20,12 @@ the folder /var/zerobin/content is exported as a volume.
 How to use it
 =============
 
+Build it
+--------
+```
+docker build -t 0bin .
+```
+
 Simple launch :
 ```
 docker run -p 8000:8000 -d 0bin
@@ -51,3 +57,5 @@ ADD settings.py /etc/zerobin/settings.py
 EXPOSE 8000
 CMD ["zerobin", "--settings-file", "/etc/zerobin/settings.py"]
 ```
+
+You can build it / start it in the same way.
