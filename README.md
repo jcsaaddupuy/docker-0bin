@@ -11,10 +11,9 @@ The default settings.py contains the folowing config :
 HOST = "0.0.0.0"
 PORT = "8000"
 # Encrypted pastes will be saved in this location
-PASTE_FILES_ROOT = "/var/zerobin/content"
+PASTE_FILES_ROOT = "/data/0bin"
 ```
 
-In the case you would want to access to the content folder from another container.
 
 How to use it
 =============
@@ -35,7 +34,7 @@ To make data persistent accross container restart :
 # Create a folder for datas on the host
 mkdir /some/location
 # laucn the container with the host folder mounted as a data volume
-docker run -p 8000:8000 -v /some/location/:/var/zerobin/content -d 0bin
+docker run -p 8000:8000 -v /some/location/:/data -d 0bin
 ```
 
 Build your own
@@ -51,10 +50,10 @@ Create a Dockerfile containing :
 FROM jcsaaddupuy/0bin
 
 # Adds custom config in the right place
-ADD settings.py /etc/zerobin/settings.py
+ADD settings.py /conf/settings.py
 
 EXPOSE 8000
-CMD ["zerobin", "--settings-file", "/etc/zerobin/settings.py"]
+CMD ["zerobin", "--settings-file", "/conf/settings.py"]
 ```
 
 You can build it / start it in the same way.

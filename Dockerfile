@@ -10,14 +10,14 @@ RUN pip install zerobin
 ######
 
 # Create some folder
-RUN mkdir -p /var/zerobin/content
-RUN mkdir -p /etc/zerobin/
+RUN mkdir -p /data
+RUN mkdir -p /conf
 ######
 
 # Adds custom config in the right place
-ADD settings.py /etc/zerobin/settings.py
+ADD settings.py /conf/settings.py
 ######
 
  
 EXPOSE 8000
-CMD ["zerobin", "--settings-file", "/etc/zerobin/settings.py"]
+CMD ["zerobin", "--settings-file", "/conf/settings.py"]
