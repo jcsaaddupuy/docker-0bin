@@ -26,4 +26,4 @@ EXPOSE 8000
 ENTRYPOINT ["zerobin"]
 
 ## By default, we'll specify some basically acceptable defaults in a settings.py file. However, the CMD can be changed at runtime to pass other options: https://0bin.readthedocs.org/en/latest/en/options.html
-CMD ["--settings-file", "/conf/settings.py", "--compressed-static"]
+CMD ["--settings-file", "/conf/settings.py"]
