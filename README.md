@@ -51,7 +51,7 @@ Look at [the default config file](https://github.com/sametmax/0bin/blob/master/z
 Create a Dockerfile containing:
 
 ```
-FROM jcaaddupuy/0bin
+FROM jcsaaddupuy/0bin
 
 # Adds custom config in the right place
 ADD settings.py /conf/settings.py
