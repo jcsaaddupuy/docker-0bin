@@ -42,20 +42,19 @@ docker run -p 8000:8000 -v /some/location/:/data -d 0bin
 
 Build your own
 ==============
-Depending on your wanted customizations, you can either sepcify a different CMD at runtime passing certain options or build a custom Dockerfile and a custom settings.py file in the same folder.
+Depending on your wanted customizations, you can either sepcify a different
+CMD at runtime passing certain options or build a custom Dockerfile and a
+custom settings.py file in the same folder.
 
 Look at [the default config file](https://github.com/sametmax/0bin/blob/master/zerobin/default_settings.py) for availables settings.
 
-Create a Dockerfile containing :
+Create a Dockerfile containing:
 
 ```
-FROM inanimate/0bin
+FROM jcaaddupuy/0bin
 
 # Adds custom config in the right place
 ADD settings.py /conf/settings.py
-
-EXPOSE 8000
-CMD ["zerobin", "--settings-file", "/conf/settings.py"]
 ```
 
 You can build it / start it in the same way.
