@@ -1,4 +1,4 @@
-FROM python:3.4-slim
+FROM python:3.5-slim
 
 ## Set the 0bin version to install: https://pypi.python.org/pypi/zerobin
 ENV ZEROBIN_VERSION 0.5
